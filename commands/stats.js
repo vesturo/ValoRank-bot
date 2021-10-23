@@ -33,9 +33,10 @@ module.exports = {
                 .setThumbnail('https://cdn.discordapp.com/attachments/847852754047467550/900678550196207646/Vesturo_1.png')
                 .setDescription('Synchronisiere einfach deinen Valorant Rank um die Passende Rolle zu erhalten!')
                 .addFields(
-                    {name: 'Shard', value: `Shard: ${shardInfo} out of  ${totalShards}` },
-                    {name: 'Server', value: `Server count: ${totalGuilds}` },
-                    {name: 'Benutzer', value: `Member count: ${totalMembers}` }
+                    {name: 'Current Shard', value: `Shard: ${shardInfo}` },
+                    {name: 'Total Shards', value: `Shard: ${totalShards}` },
+                    {name: 'Total Servers', value: `Server count: ${totalGuilds}` },
+                    {name: 'All Guild Members', value: `Member count: ${totalMembers}` }
                 )
                 .setTimestamp()
                 .setFooter('Made by Studio 5', 'https://cdn.discordapp.com/attachments/847852754047467550/900678550196207646/Vesturo_1.png');
