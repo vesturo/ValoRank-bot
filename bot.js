@@ -1,8 +1,22 @@
 // Require the necessary discord.js classes
 const { Client, Intents } = require('discord.js');
-const { token, guildId, ownerId } = require('./config.json');
+const { token, guildId, ownerId, hostname, db_name, db_pass, db_user } = require('./config.json');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 const Handler = require('discord-slash-command-handler').Handler;
+const mysql = require('mysql');
+
+
+const connection = mysql.createConnection({ host:hostname, user:db_user, password:db_pass});
+
+connection.connect(function(err) {
+  if (err) {
+    console.error('error connecting: ' + err.stack);
+    return;
+  }
+
+  console.log('MYSQL-ID ' + connection.threadId);
+});
+
 
 // When the client is ready, run this code (only once)
 client.once('ready', () => {
